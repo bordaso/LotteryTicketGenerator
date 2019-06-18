@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-<algo>
-	<id>1</id>
+<algo id="1">
     <maxGeneratedNumberValue>90</maxGeneratedNumberValue>
     <numberOfGeneratedValues>5</numberOfGeneratedValues>
 </algo>
 
-<algo>
-    <id>2</id>
+<algo id="2">
     <numberOfGamePanels>3</numberOfGamePanels>
     <numberOfGeneratedValues>5</numberOfGeneratedValues>
 </algo>
 
-<algo>
-    <id>3</id>
+<algo id="3">
     <numberOfGamePanels>3</numberOfGamePanels>
     <maxGeneratedNumberValue>90</maxGeneratedNumberValue>    
     <numberOfGeneratedValues>5</numberOfGeneratedValues>

@@ -10,6 +10,9 @@ public class GamePanel {
 		super();
 		this.numbers = numbers;
 	}
+	
+	public GamePanel() {
+	}
 
 	public List<Integer> getNumbers() {
 		return numbers;

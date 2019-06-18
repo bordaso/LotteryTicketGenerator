@@ -7,12 +7,11 @@ import main.GamePanel;
 public class QuickTipAlgo1 implements QuickTip{
 	
 	
-	QuickTipAlgo1(){
-		
+	QuickTipAlgo1(){		
 	}
 
 	@Override
-	public GamePanel QuickTipGeneratorOne(int maxGeneratedNumberValue, int numberOfGeneratedValues) {
+	public GamePanel QuickTipGeneratorOne(int numberIntervalMax, int numberOfGeneratedValues) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -23,7 +22,7 @@ public class QuickTipAlgo1 implements QuickTip{
 	}
 
 	@Override
-	public List<GamePanel> QuickTipGeneratorThree(int numberOfGamePanels, int maxGeneratedNumberValue,
+	public List<GamePanel> QuickTipGeneratorThree(int numberOfGamePanels, int numberIntervalMax,
 			int numberOfGeneratedValues) {
 		throw new UnsupportedOperationException();
 	}

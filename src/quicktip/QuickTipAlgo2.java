@@ -11,7 +11,7 @@ public class QuickTipAlgo2 implements QuickTip {
 	}
 
 	@Override
-	public GamePanel QuickTipGeneratorOne(int maxGeneratedNumberValue, int numberOfGeneratedValues) {
+	public GamePanel QuickTipGeneratorOne(int numberIntervalMax, int numberOfGeneratedValues) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -22,7 +22,7 @@ public class QuickTipAlgo2 implements QuickTip {
 	}
 
 	@Override
-	public List<GamePanel> QuickTipGeneratorThree(int numberOfGamePanels, int maxGeneratedNumberValue,
+	public List<GamePanel> QuickTipGeneratorThree(int numberOfGamePanels, int numberIntervalMax,
 			int numberOfGeneratedValues) {
 		throw new UnsupportedOperationException();
 	}

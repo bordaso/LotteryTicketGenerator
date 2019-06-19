@@ -14,8 +14,8 @@ public class LotteryCorp {
 
 	public static void main(String[] args) throws Exception {
 		
-		String[] argsTest= {"7","3"};
-		args=argsTest;
+//		String[] argsTest= {"7","3"};
+//		args=argsTest;
 
 		List<Integer> instructions = Arrays.asList(args).stream().mapToInt(Integer::parseInt).boxed()
 				.collect(Collectors.toList());

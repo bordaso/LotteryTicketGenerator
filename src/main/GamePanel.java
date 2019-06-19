@@ -1,10 +1,11 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GamePanel {
 	
-	private List<Integer> numbers;
+	private List<Integer> numbers= new ArrayList<>();;
 
 	public GamePanel(List<Integer> numbers) {
 		super();

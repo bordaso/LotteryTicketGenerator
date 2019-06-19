@@ -4,12 +4,10 @@
     <numberIntervalMax>90</numberIntervalMax>
     <numberOfGeneratedValues>5</numberOfGeneratedValues>
 </algo>
-
 <algo id="2">
     <numberOfGamePanels>3</numberOfGamePanels>
     <numberOfGeneratedValues>5</numberOfGeneratedValues>
 </algo>
-
 <algo id="3">
     <numberOfGamePanels>3</numberOfGamePanels>
     <numberIntervalMax>90</numberIntervalMax>    

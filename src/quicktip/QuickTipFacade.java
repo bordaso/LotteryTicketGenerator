@@ -25,7 +25,7 @@ public class QuickTipFacade {
 	private final QuickTip algo1;
 	private final QuickTip algo2;
 	private final QuickTip algo3;
-	
+
 	private List<Integer> params = new ArrayList<>();
 
 	private static final QuickTipFacade qtfacade = new QuickTipFacade();
@@ -38,73 +38,72 @@ public class QuickTipFacade {
 	}
 
 	public List<GameTicket> callProperQuickTipGenerator(int gameticketParam, int algoParam) {
-		
-		List<GameTicket> gtl = IntStream.rangeClosed(1, gameticketParam==0?1:gameticketParam)
-				.mapToObj(e-> new GameTicket())
-				.peek(e-> algorithmCaller(e, algoParam))
-				.collect(Collectors.toList());		
-	
+
+		List<GameTicket> gtl = IntStream.rangeClosed(1, gameticketParam == 0 ? 1 : gameticketParam)
+				.mapToObj(e -> new GameTicket()).peek(e -> algorithmCaller(e, algoParam)).collect(Collectors.toList());
+
 		return gtl;
 	}
 
 	private void algorithmCaller(GameTicket input, int algoParam) {
-		
+
 		xmlParse(algoParam);
-		
+
 		switch (algoParam) {
 		case 1:
-			algo1.QuickTipGeneratorOne(params.get(0), params.get(1));
+			input.getPlayedPanels().add(
+					new ArrayList<GamePanel>() {{
+					    add(algo1.QuickTipGeneratorOne(params.get(0), params.get(1)));
+					}}
+					);
+			break;
 		case 2:
-			algo2.QuickTipGeneratorTwo(params.get(0), params.get(1));
+			input.getPlayedPanels().add(algo2.QuickTipGeneratorTwo(params.get(0), params.get(1)));
+			break;
 		case 3:
-			algo3.QuickTipGeneratorThree(params.get(0), params.get(1), params.get(2));
+			input.getPlayedPanels().add(algo3.QuickTipGeneratorThree(params.get(0), params.get(1), params.get(2)));
+			break;
 		default:
 			throw new UnsupportedOperationException();
 		}
-		
-		
+
 	}
 
-	private void xmlParse(int algoParam){
-		
+	private void xmlParse(int algoParam) {
+
 		File xmlFile = new File("resources/quickTipParam.xml");
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder=null;
-		Document doc=null;
+		DocumentBuilder builder = null;
+		Document doc = null;
 		try {
 			builder = factory.newDocumentBuilder();
 			doc = builder.parse(xmlFile);
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		getParamsByAlgoId(doc, algoParam);
 	}
-	
 
-private void getParamsByAlgoId(Document doc, int algoParam) {
+	private void getParamsByAlgoId(Document doc, int algoParam) {
 
-	NodeList algoNodes = doc.getElementsByTagName("algo");
-	
-	for(int i=0; i<algoNodes.getLength(); i++)
-	{
-		Node algoNode = algoNodes.item(i);
-		if(algoNode.getNodeType() == Node.ELEMENT_NODE && ((Element) algoNode).getAttribute("id").equals(""+algoParam))
-		{
-			Element studentElement = (Element) algoNode;
-			NodeList subNodes = ((Element) algoNode).getChildNodes();			
-			for(int z=0; i<subNodes.getLength(); z++){
-				params.add(Integer.parseInt(subNodes.item(z).getNodeValue()));				
+		NodeList algoNodes = doc.getElementsByTagName("algo");
+
+		for (int i = 0; i < algoNodes.getLength(); i++) {
+			Node algoNode = algoNodes.item(i);
+			if (algoNode.getNodeType() == Node.ELEMENT_NODE
+					&& ((Element) algoNode).getAttribute("id").equals("" + algoParam)) {
+				NodeList subNodes = ((Element) algoNode).getChildNodes();
+				for (int z = 0; z < subNodes.getLength(); z++) {
+					if (subNodes.item(z).getNodeType() == Node.ELEMENT_NODE) {
+						params.add(Integer.parseInt(subNodes.item(z).getTextContent()));
+					}
+				}
 			}
 		}
+
 	}
-		
-}
 
-
-	
-	
-	
 	public static QuickTipFacade getQtfacade() {
 		return qtfacade;
 	}

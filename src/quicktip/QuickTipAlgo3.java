@@ -23,8 +23,7 @@ public class QuickTipAlgo3 implements QuickTip {
 	@Override
 	public List<GamePanel> QuickTipGeneratorThree(int numberOfGamePanels, int numberIntervalMax,
 			int numberOfGeneratedValues) {
-		// TODO Auto-generated method stub
-		return null;
+		return RandomGeneratorUtil.INSTANCE.generate(this, numberOfGamePanels, numberIntervalMax, numberOfGeneratedValues);
 	}
 
 }

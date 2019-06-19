@@ -7,11 +7,11 @@ public class QuickTipFactory {
 	private QuickTipFactory() {		
 	}
 
-	public static QuickTipFactory getInstance() {
+	static QuickTipFactory getInstance() {
 		return INSTANCE;
 	}
 	
-	public QuickTip quickTipAlgoSwitcher(int algoNum) {
+	QuickTip quickTipAlgoSwitcher(int algoNum) {
 		
 		QuickTip algoInst;
 		

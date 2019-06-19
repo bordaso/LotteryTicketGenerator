@@ -12,8 +12,7 @@ public class QuickTipAlgo1 implements QuickTip{
 
 	@Override
 	public GamePanel QuickTipGeneratorOne(int numberIntervalMax, int numberOfGeneratedValues) {
-		// TODO Auto-generated method stub
-		return null;
+		return RandomGeneratorUtil.INSTANCE.generate(this, numberIntervalMax, numberOfGeneratedValues).get(0);
 	}
 
 	@Override

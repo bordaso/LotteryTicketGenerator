@@ -17,8 +17,7 @@ public class QuickTipAlgo2 implements QuickTip {
 
 	@Override
 	public List<GamePanel> QuickTipGeneratorTwo(int numberOfGamePanels, int numberOfGeneratedValues) {
-		// TODO Auto-generated method stub
-		return null;
+		return RandomGeneratorUtil.INSTANCE.generate(this, numberOfGamePanels, numberOfGeneratedValues);
 	}
 
 	@Override

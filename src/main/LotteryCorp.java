@@ -7,7 +7,9 @@ import java.util.stream.IntStream;
 
 import quicktip.QuickTipFacade;
 
-
+//Implemented by BORDASO
+//2019.06.19.
+//Budapest, Hungary
 public class LotteryCorp {
 
 	public static void main(String[] args) throws Exception {
